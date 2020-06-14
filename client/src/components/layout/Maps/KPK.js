@@ -29,6 +29,60 @@ class KPK extends React.Component {
 	}
 
 	render() {
+		const y = this.props.cityname;
+		const val = this.props.valuepm25;
+		console.log(y);
+		var z = 0;
+
+		if (y == 'Abbottabad') {
+			z = 1;
+		} else if (y == 'Bannu') {
+			z = 2;
+		} else if (y == 'Battagram') {
+			z = 3;
+		} else if (y == 'Buner') {
+			z = 4;
+		} else if (y == 'Charsadda') {
+			z = 5;
+		} else if (y == 'Chitral') {
+			z = 6;
+		} else if (y == 'Dera Ismail Khan') {
+			z = 7;
+		} else if (y == 'Dir Upper') {
+			z = 8;
+		} else if (y == 'Dir Lower') {
+			z = 9;
+		} else if (y == 'Hangu') {
+			z = 10;
+		} else if (y == 'Haripur') {
+			z = 11;
+		} else if (y == 'Karak') {
+			z = 12;
+		} else if (y == 'Kohat') {
+			z = 13;
+		} else if (y == 'Kohistan') {
+			z = 14;
+		} else if (y == 'Lakki Marwat') {
+			z = 15;
+		} else if (y == 'Malakand') {
+			z = 16;
+		} else if (y == 'Mansehra') {
+			z = 17;
+		} else if (y == 'Mardan') {
+			z = 18;
+		} else if (y == 'Nowshera') {
+			z = 19;
+		} else if (y == 'Peshawar') {
+			z = 20;
+		} else if (y == 'Swabi') {
+			z = 21;
+		} else if (y == 'Swat') {
+			z = 22;
+		} else if (y == 'Shangla') {
+			z = 23;
+		} else if (y == 'Tank') {
+			z = 24;
+		}
 		return (
 			<ReactFC
 				{...{
@@ -42,7 +96,7 @@ class KPK extends React.Component {
 							caption: 'KPK',
 							labelsepchar: ': ',
 							entityFillHoverColor: '#FFF9C4',
-							theme: 'fusion'
+							theme: 'fusion',
 						},
 						// Aesthetics; ranges synced with the slider
 						colorrange: {
@@ -53,38 +107,44 @@ class KPK extends React.Component {
 								{
 									minvalue: '0',
 									maxvalue: '12',
-									color: '#15AB00'
+									color: '#15AB00',
 								},
 								{
 									minvalue: '13',
 									maxvalue: '35',
-									color: '#FEC34D'
+									color: '#FEC34D',
 								},
 								{
 									minvalue: '36',
 									maxvalue: '55',
-									color: '#FF5C00'
+									color: '#FF5C00',
 								},
 								{
 									minvalue: '55',
 									maxvalue: '150',
-									color: '#FF2B00'
+									color: '#FF2B00',
 								},
 								{
 									minvalue: '150',
 									maxvalue: '250',
-									color: '#B44010'
+									color: '#B44010',
 								},
 								{
 									minvalue: '250',
 									maxvalue: '500',
-									color: '#800000'
-								}
-							]
+									color: '#800000',
+								},
+							],
 						},
 						// Source data as JSON --> id represents countries of world.
-						data: []
-					}
+						data: [
+							{
+								id: '' + z,
+								value: '' + val,
+								showLabel: '1',
+							},
+						],
+					},
 				}}
 			/>
 		);

@@ -10,137 +10,137 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import '../../App.css';
 const useStyles = makeStyles(styles);
 const languages = [
-	{ name: 'itching' },
-	{ name: 'skin_rash' },
-	{ name: 'nodal_skin_eruptions' },
-	{ name: 'shivering' },
-	{ name: 'chills' },
-	{ name: 'joint_pain' },
-	{ name: 'stomach_pain' },
-	{ name: 'acidity' },
-	{ name: 'ulcers_on_tongue' },
-	{ name: 'muscle_wasting' },
-	{ name: 'vomiting' },
-	{ name: 'burning_micturition' },
-	{ name: 'spotting_ urination' },
-	{ name: 'fatigue' },
-	{ name: 'weight_gain' },
-	{ name: 'anxiety' },
-	{ name: 'cold_hands_and_feets' },
-	{ name: 'mood_swings' },
-	{ name: 'weight_loss' },
-	{ name: 'restlessness' },
-	{ name: 'lethargy' },
-	{ name: 'patches_in_throat' },
-	{ name: 'irregular_sugar_level' },
-	{ name: 'cough' },
-	{ name: 'high_fever' },
-	{ name: 'sunken_eyes' },
-	{ name: 'breathlessness' },
-	{ name: 'sweating' },
-	{ name: 'dehydration' },
-	{ name: 'indigestion' },
-	{ name: 'headache' },
-	{ name: 'yellowish_skin' },
-	{ name: 'dark_urine' },
-	{ name: 'nausea' },
-	{ name: 'loss_of_appetite' },
-	{ name: 'pain_behind_the_eyes' },
-	{ name: 'back_pain' },
-	{ name: 'constipation' },
-	{ name: 'abdominal_pain' },
-	{ name: 'diarrhoea' },
-	{ name: 'mild_fever' },
-	{ name: 'yellow_urine' },
-	{ name: 'yellowing_of_eyes' },
-	{ name: 'acute_liver_failure' },
-	{ name: 'fluid_overload' },
-	{ name: 'swelling_of_stomach' },
-	{ name: 'swelled_lymph_nodes' },
-	{ name: 'malaise' },
-	{ name: 'blurred_and_distorted_vision' },
-	{ name: 'phlegm' },
-	{ name: 'throat_irritation' },
-	{ name: 'redness_of_eyes' },
-	{ name: 'sinus_pressure' },
-	{ name: 'runny_nose' },
-	{ name: 'congestion' },
-	{ name: 'chest_pain' },
-	{ name: 'weakness_in_limbs' },
-	{ name: 'fast_heart_rate' },
-	{ name: 'pain_during_bowel_movements' },
-	{ name: 'pain_in_anal_region' },
-	{ name: 'bloody_stool' },
-	{ name: 'irritation_in_anus' },
-	{ name: 'neck_pain' },
-	{ name: 'dizziness' },
-	{ name: 'cramps' },
-	{ name: 'bruising' },
-	{ name: 'obesity' },
-	{ name: 'swollen_legs' },
-	{ name: 'swollen_blood_vessels' },
-	{ name: 'puffy_face_and_eyes' },
-	{ name: 'enlarged_thyroid' },
-	{ name: 'brittle_nails' },
-	{ name: 'swollen_extremeties' },
-	{ name: 'excessive_hunger' },
-	{ name: 'drying_and_tingling_lips' },
-	{ name: 'slurred_speech' },
-	{ name: 'knee_pain' },
-	{ name: 'hip_joint_pain' },
-	{ name: 'muscle_weakness' },
-	{ name: 'stiff_neck' },
-	{ name: 'swelling_joints' },
-	{ name: 'movement_stiffness' },
-	{ name: 'spinning_movements' },
-	{ name: 'loss_of_balance' },
-	{ name: 'unsteadiness' },
-	{ name: 'weakness_of_one_body_side' },
-	{ name: 'loss_of_smell' },
-	{ name: 'bladder_discomfort' },
-	{ name: 'foul_smell_of urine' },
-	{ name: 'continuous_feel_of_urine' },
-	{ name: 'passage_of_gases' },
-	{ name: 'internal_itching' },
-	{ name: 'toxic_look_(typhos)' },
-	{ name: 'depression' },
-	{ name: 'irritability' },
-	{ name: 'muscle_pain' },
-	{ name: 'altered_sensorium' },
-	{ name: 'red_spots_over_body' },
-	{ name: 'belly_pain' },
-	{ name: 'abnormal_menstruation' },
-	{ name: 'dischromic _patches' },
-	{ name: 'watering_from_eyes' },
-	{ name: 'increased_appetite' },
-	{ name: 'polyuria' },
-	{ name: 'family_history' },
-	{ name: 'mucoid_sputum' },
-	{ name: 'rusty_sputum' },
-	{ name: 'lack_of_concentration' },
-	{ name: 'visual_disturbances' },
-	{ name: 'receiving_blood_transfusion' },
-	{ name: 'receiving_unsterile_injections' },
-	{ name: 'coma' },
-	{ name: 'stomach_bleeding' },
-	{ name: 'distention_of_abdomen' },
-	{ name: 'history_of_alcohol_consumption' },
-	{ name: 'fluid_overload' },
-	{ name: 'blood_in_sputum' },
-	{ name: 'prominent_veins_on_calf' },
-	{ name: 'palpitations' },
-	{ name: 'painful_walking' },
-	{ name: 'pus_filled_pimples' },
-	{ name: 'blackheads' },
-	{ name: 'scurring' },
-	{ name: 'skin_peeling' },
-	{ name: 'silver_like_dusting' },
-	{ name: 'small_dents_in_nails' },
-	{ name: 'inflammatory_nails' },
-	{ name: 'blister' },
-	{ name: 'red_sore_around_nose' },
-	{ name: 'yellow_crust_ooze' },
-	{ name: 'prognosis' },
+	{ name: 'Itching' },
+	{ name: 'Skin Rash' },
+	{ name: 'Nodal Skin Erruption' },
+	{ name: 'Shivering' },
+	{ name: 'Chills' },
+	{ name: 'Joint Pain' },
+	{ name: 'Stomach Pain' },
+	{ name: 'Acidity' },
+	{ name: 'Ulcers on tongue' },
+	{ name: 'Muscle Weakening' },
+	{ name: 'Vomiting' },
+	{ name: 'Burning Micturition' },
+	{ name: 'Spotting Urination' },
+	{ name: 'Fatigue' },
+	{ name: 'Weight Gain' },
+	{ name: 'Anxiety' },
+	{ name: 'Cold hands and feets' },
+	{ name: 'Mood Swings' },
+	{ name: 'Weight Loss' },
+	{ name: 'Restlessness' },
+	{ name: 'Lethargy' },
+	{ name: 'Patches in throat' },
+	{ name: 'Irregular sugar level' },
+	{ name: 'Cough' },
+	{ name: 'High fever' },
+	{ name: 'Sunken eyes' },
+	{ name: 'Breathlessness' },
+	{ name: 'Sweating' },
+	{ name: 'Dehydration' },
+	{ name: 'Indigestion' },
+	{ name: 'Headache' },
+	{ name: 'Yellowish skin' },
+	{ name: 'Dark urine' },
+	{ name: 'Nausea' },
+	{ name: 'Loss of appetite' },
+	{ name: 'Pain behind the eyes' },
+	{ name: 'Back pain' },
+	{ name: 'Constipation' },
+	{ name: 'Abdominal pain' },
+	{ name: 'Diarrhoea' },
+	{ name: 'Mild fever' },
+	{ name: 'Yellow urine' },
+	{ name: 'Yellowing of eyes' },
+	{ name: 'Acute liver failure' },
+	{ name: 'Fluid overload' },
+	{ name: 'Swelling of stomach' },
+	{ name: 'Swelled lymph nodes' },
+	{ name: 'Malaise' },
+	{ name: 'Blurred and distorted vision' },
+	{ name: 'Phlegm' },
+	{ name: 'Throat irritation' },
+	{ name: 'Redness of eyes' },
+	{ name: 'Sinus pressure' },
+	{ name: 'Runny nose' },
+	{ name: 'Congestion' },
+	{ name: 'Chest pain' },
+	{ name: 'Weakness in limbs' },
+	{ name: 'Fast heart rate' },
+	{ name: 'Pain during bowel movements' },
+	{ name: 'Pain in anal region' },
+	{ name: 'Bloody stool' },
+	{ name: 'Irritation in anus' },
+	{ name: 'Neck pain' },
+	{ name: 'Dizziness' },
+	{ name: 'Cramps' },
+	{ name: 'Bruising' },
+	{ name: 'Obesity' },
+	{ name: 'Swollen legs' },
+	{ name: 'Swollen blood vessels' },
+	{ name: 'Puffy face and eyes' },
+	{ name: 'Enlarged thyroid' },
+	{ name: 'Brittle nails' },
+	{ name: 'Swollen extremeties' },
+	{ name: 'Excessive hunger' },
+	{ name: 'Drying and tingling lips' },
+	{ name: 'Slurred speech' },
+	{ name: 'Knee pain' },
+	{ name: 'Hip joint pain' },
+	{ name: 'Muscle weakness' },
+	{ name: 'Stiff neck' },
+	{ name: 'Swelling joints' },
+	{ name: 'Movement stiffness' },
+	{ name: 'Spinning movements' },
+	{ name: 'Loss of balance' },
+	{ name: 'Unsteadiness' },
+	{ name: 'Weakness of one body side' },
+	{ name: 'Loss of smell' },
+	{ name: 'Bladder discomfort' },
+	{ name: 'Foul smell of urine' },
+	{ name: 'Continuous feel of urine' },
+	{ name: 'Passage of gases' },
+	{ name: 'Internal itching' },
+	{ name: 'Toxic look (typhos)' },
+	{ name: 'Depression' },
+	{ name: 'Irritability' },
+	{ name: 'Muscle pain' },
+	{ name: 'Altered sensorium' },
+	{ name: 'Red spots over body' },
+	{ name: 'Belly pain' },
+	{ name: 'Abnormal menstruation' },
+	{ name: 'Dischromic patches' },
+	{ name: 'Watering from eyes' },
+	{ name: 'Increased appetite' },
+	{ name: 'Polyuria' },
+	{ name: 'Family history' },
+	{ name: 'Mucoid sputum' },
+	{ name: 'Rusty sputum' },
+	{ name: 'Lack of concentration' },
+	{ name: 'Visual disturbances' },
+	{ name: 'Receiving blood transfusion' },
+	{ name: 'Receiving unsterile injections' },
+	{ name: 'Coma' },
+	{ name: 'Stomach bleeding' },
+	{ name: 'Distention of abdomen' },
+	{ name: 'History of alcohol consumption' },
+	{ name: 'Fluid overload' },
+	{ name: 'Blood in sputum' },
+	{ name: 'Prominent veins on calf' },
+	{ name: 'Palpitations' },
+	{ name: 'Painful walking' },
+	{ name: 'Pus filled pimples' },
+	{ name: 'Blackheads' },
+	{ name: 'Scurring' },
+	{ name: 'Skin peeling' },
+	{ name: 'Silver like dusting' },
+	{ name: 'Small dents in nails' },
+	{ name: 'Inflammatory nails' },
+	{ name: 'Blister' },
+	{ name: 'Red sore around nose' },
+	{ name: 'Yellow crust ooze' },
+	{ name: 'Prognosis' },
 ];
 const getSuggestions = (value) => {
 	const inputValue = value.trim().toLowerCase();
@@ -163,6 +163,7 @@ class Disease extends Component {
 
 		this.state = {
 			symptomArray: [],
+			symptomCopyArray: [],
 			value: '',
 			suggestions: [],
 			mydata: null,
@@ -197,7 +198,6 @@ class Disease extends Component {
 	};
 
 	submit = async () => {
-		alert(this.state.value + ' ');
 		await this.allSymptoms();
 
 		fetch('http://localhost:1000/api/Disease', {
@@ -231,11 +231,298 @@ class Disease extends Component {
 			.catch((err) => alert(err));
 	};
 
+	originalSymptom(name) {
+		var symptom = '';
+		if (name == 'Itching') {
+			symptom = 'itching';
+		} else if (name == 'Skin Rash') {
+			symptom = 'skin_rash';
+		} else if (name == 'Nodal Skin Erruption') {
+			symptom = 'nodal_skin_eruptions';
+		} else if (name == 'Shivering') {
+			symptom = 'shivering';
+		} else if (name == 'Chills') {
+			symptom = 'chills';
+		} else if (name == 'Joint Pain') {
+			symptom = 'joint_pain';
+		} else if (name == 'Stomach Pain') {
+			symptom = 'stomach_pain';
+		} else if (name == 'Acidity') {
+			symptom = 'acidity';
+		} else if (name == 'Ulcers on tongue') {
+			symptom = 'ulcers_on_tongue';
+		} else if (name == 'Muscle Weakening') {
+			symptom = 'muscle_wasting';
+		} else if (name == 'Vomiting') {
+			symptom = 'vomiting';
+		} else if (name == 'Burning Micturition') {
+			symptom = 'burning_micturition';
+		} else if (name == 'Spotting Urination') {
+			symptom = 'spotting_ urination';
+		} else if (name == 'Fatigue') {
+			symptom = 'fatigue';
+		} else if (name == 'Weight Gain') {
+			symptom = 'weight_gain';
+		} else if (name == 'Anxiety') {
+			symptom = 'anxiety';
+		} else if (name == 'Cold hands and feets') {
+			symptom = 'cold_hands_and_feets';
+		} else if (name == 'Mood Swings') {
+			symptom = 'mood_swings';
+		} else if (name == 'Weight Loss') {
+			symptom = 'weight_loss';
+		} else if (name == 'Restlessness') {
+			symptom = 'restlessness';
+		} else if (name == 'Lethargy') {
+			symptom = 'lethargy';
+		} else if (name == 'Patches in throat') {
+			symptom = 'patches_in_throat';
+		} else if (name == 'Irregular sugar level') {
+			symptom = 'irregular_sugar_level';
+		} else if (name == 'Cough') {
+			symptom = 'cough';
+		} else if (name == 'High fever') {
+			symptom = 'high_fever';
+		} else if (name == 'Sunken eyes') {
+			symptom = 'sunken_eyes';
+		} else if (name == 'Breathlessness') {
+			symptom = 'breathlessness';
+		} else if (name == 'Sweating') {
+			symptom = 'sweating';
+		} else if (name == 'Dehydration') {
+			symptom = 'dehydration';
+		} else if (name == 'Indigestion') {
+			symptom = 'indigestion';
+		} else if (name == 'Headache') {
+			symptom = 'headache';
+		} else if (name == 'Yellowish skin') {
+			symptom = 'yellowish_skin';
+		} else if (name == 'Dark urine') {
+			symptom = 'dark_urine';
+		} else if (name == 'Nausea') {
+			symptom = 'nausea';
+		} else if (name == 'Loss of appetite') {
+			symptom = 'loss_of_appetite';
+		} else if (name == 'Pain behind the eyes') {
+			symptom = 'pain_behind_the_eyes';
+		} else if (name == 'Back pain') {
+			symptom = 'back_pain';
+		} else if (name == 'Constipation  ') {
+			symptom = 'constipation';
+		} else if (name == 'Abdominal pain') {
+			symptom = 'abdominal_pain';
+		} else if (name == 'Diarrhoea') {
+			symptom = 'diarrhoea';
+		} else if (name == 'Mild fever') {
+			symptom = 'mild_fever';
+		} else if (name == 'Yellow urine') {
+			symptom = 'yellow_urine';
+		} else if (name == 'Yellowing of eyes') {
+			symptom = 'yellowing_of_eyes';
+		} else if (name == 'Acute liver failure') {
+			symptom = 'acute_liver_failure';
+		} else if (name == 'Fluid overload') {
+			symptom = 'fluid_overload';
+		} else if (name == 'Swelling of stomach') {
+			symptom = 'swelling_of_stomach';
+		} else if (name == 'Swelled lymph nodes') {
+			symptom = 'swelled_lymph_nodes';
+		} else if (name == 'Malaise') {
+			symptom = 'malaise';
+		} else if (name == 'Blurred and distorted vision') {
+			symptom = 'blurred_and_distorted_vision';
+		} else if (name == 'Phlegm') {
+			symptom = 'phlegm';
+		} else if (name == 'Throat irritation') {
+			symptom = 'throat_irritation';
+		} else if (name == 'Redness of eyes') {
+			symptom = 'redness_of_eyes';
+		} else if (name == 'Sinus pressure') {
+			symptom = 'sinus_pressure';
+		} else if (name == 'Runny nose') {
+			symptom = 'runny_nose';
+		} else if (name == 'Congestion') {
+			symptom = 'congestion';
+		} else if (name == 'Chest pain') {
+			symptom = 'chest_pain';
+		} else if (name == 'Weakness in limbs') {
+			symptom = 'weakness_in_limbs';
+		} else if (name == 'Fast heart rate') {
+			symptom = 'fast_heart_rate';
+		} else if (name == 'Pain during bowel movements') {
+			symptom = 'pain_during_bowel_movements';
+		} else if (name == 'Pain in anal region') {
+			symptom = 'pain_in_anal_region';
+		} else if (name == 'Bloody stool') {
+			symptom = 'bloody_stool';
+		} else if (name == 'Irritation in anus') {
+			symptom = 'irritation_in_anus';
+		} else if (name == 'Neck pain') {
+			symptom = 'neck_pain';
+		} else if (name == 'Dizziness') {
+			symptom = 'dizziness';
+		} else if (name == 'Cramps') {
+			symptom = 'cramps';
+		} else if (name == 'Bruising') {
+			symptom = 'bruising';
+		} else if (name == 'Obesity') {
+			symptom = 'obesity';
+		} else if (name == 'Swollen legs') {
+			symptom = 'swollen_legs';
+		} else if (name == 'Swollen blood vessels') {
+			symptom = 'swollen_blood_vessels';
+		} else if (name == 'Puffy face and eyes') {
+			symptom = 'puffy_face_and_eyes';
+		} else if (name == 'Enlarged thyroid') {
+			symptom = 'enlarged_thyroid';
+		} else if (name == 'Brittle nails') {
+			symptom = 'brittle_nails';
+		} else if (name == 'Swollen extremeties') {
+			symptom = 'swollen_extremeties';
+		} else if (name == 'Excessive hunger') {
+			symptom = 'excessive_hunger';
+		} else if (name == 'Drying and tingling lips') {
+			symptom = 'drying_and_tingling_lips';
+		} else if (name == 'Slurred speech') {
+			symptom = 'slurred_speech';
+		} else if (name == 'Knee pain') {
+			symptom = 'knee_pain';
+		} else if (name == 'Hip joint pain') {
+			symptom = 'hip_joint_pain';
+		} else if (name == 'Muscle weakness') {
+			symptom = 'muscle_weakness';
+		} else if (name == 'Stiff neck') {
+			symptom = 'stiff_neck';
+		} else if (name == 'Swelling joints') {
+			symptom = 'swelling_joints';
+		} else if (name == 'Movement stiffness') {
+			symptom = 'movement_stiffness';
+		} else if (name == 'Spinning movements') {
+			symptom = 'spinning_movements';
+		} else if (name == 'Loss of balance') {
+			symptom = 'loss_of_balance';
+		} else if (name == 'Unsteadiness') {
+			symptom = 'unsteadiness';
+		} else if (name == 'Weakness of one body side') {
+			symptom = 'weakness_of_one_body_side';
+		} else if (name == 'Loss of smell') {
+			symptom = 'loss_of_smell';
+		} else if (name == 'Bladder discomfort') {
+			symptom = 'bladder_discomfort';
+		} else if (name == 'Foul smell of urine') {
+			symptom = 'foul_smell_of urine';
+		} else if (name == 'Continuous feel of urine') {
+			symptom = 'continuous_feel_of_urine';
+		} else if (name == 'Passage of gases') {
+			symptom = 'passage_of_gases';
+		} else if (name == 'Internal itching') {
+			symptom = 'internal_itching';
+		} else if (name == 'Toxic look (typhos)') {
+			symptom = 'toxic_look_(typhos)';
+		} else if (name == 'Depression') {
+			symptom = 'depression';
+		} else if (name == 'Irritability') {
+			symptom = 'irritability';
+		} else if (name == 'Muscle pain') {
+			symptom = 'muscle_pain';
+		} else if (name == 'Altered sensorium') {
+			symptom = 'altered_sensorium';
+		} else if (name == 'Red spots over body') {
+			symptom = 'red_spots_over_body';
+		} else if (name == 'Belly pain') {
+			symptom = 'belly_pain';
+		} else if (name == 'Abnormal menstruation') {
+			symptom = 'abnormal_menstruation';
+		} else if (name == 'Dischromic patches') {
+			symptom = 'dischromic _patches';
+		} else if (name == 'Watering from eyes') {
+			symptom = 'watering_from_eyes';
+		} else if (name == 'Increased appetite') {
+			symptom = 'increased_appetite';
+		} else if (name == 'Polyuria') {
+			symptom = 'polyuria';
+		} else if (name == 'Family history') {
+			symptom = 'family_history';
+		} else if (name == 'Mucoid sputum') {
+			symptom = 'mucoid_sputum';
+		} else if (name == 'Rusty sputum') {
+			symptom = 'rusty_sputum';
+		} else if (name == 'Lack of concentration') {
+			symptom = 'lack_of_concentration';
+		} else if (name == 'Visual disturbances') {
+			symptom = 'visual_disturbances';
+		} else if (name == 'Receiving blood transfusion') {
+			symptom = 'receiving_blood_transfusion';
+		} else if (name == 'Receiving unsterile injections') {
+			symptom = 'receiving_unsterile_injections';
+		} else if (name == 'Coma') {
+			symptom = 'coma';
+		} else if (name == 'Stomach bleeding') {
+			symptom = 'stomach_bleeding';
+		} else if (name == 'Distention of abdomen') {
+			symptom = 'distention_of_abdomen';
+		} else if (name == 'History of alcohol consumption') {
+			symptom = 'history_of_alcohol_consumption';
+		} else if (name == 'Fluid overload') {
+			symptom = 'fluid_overload';
+		} else if (name == 'Blood in sputum') {
+			symptom = 'blood_in_sputum';
+		} else if (name == 'Prominent veins on calf') {
+			symptom = 'prominent_veins_on_calf';
+		} else if (name == 'Palpitations') {
+			symptom = 'palpitations';
+		} else if (name == 'Painful walking') {
+			symptom = 'painful_walking';
+		} else if (name == 'Pus filled pimples') {
+			symptom = 'pus_filled_pimples';
+		} else if (name == 'Blackheads') {
+			symptom = 'blackheads';
+		} else if (name == 'Scurring') {
+			symptom = 'scurring';
+		} else if (name == 'Skin peeling') {
+			symptom = 'skin_peeling';
+		} else if (name == 'Silver like dusting') {
+			symptom = 'silver_like_dusting';
+		} else if (name == 'Small dents in nails') {
+			symptom = 'small_dents_in_nails';
+		} else if (name == 'Inflammatory nails') {
+			symptom = 'inflammatory_nails';
+		} else if (name == 'Blister') {
+			symptom = 'blister';
+		} else if (name == 'Red sore around nose') {
+			symptom = 'red_sore_around_nose';
+		} else if (name == 'Yellow crust ooze') {
+			symptom = 'yellow_crust_ooze';
+		} else if (name == 'Prognosis') {
+			symptom = 'prognosis';
+		} else {
+			symptom = 'Does not exist';
+		}
+		return symptom;
+	}
 	allSymptoms = () => {
-		this.setState({
-			symptomArray: this.state.symptomArray.concat(this.state.value),
-			value: '',
-		});
+		if (this.state.value != '') {
+			var symptom = this.originalSymptom(this.state.value);
+			if (this.state.symptomArray.includes(symptom)) {
+				alert('This symptom is already inclcuded');
+				this.setState({
+					value: '',
+				});
+			} else if (symptom == 'Does not exist') {
+				alert('Sorry! This symptom cannot be entered');
+				this.setState({
+					value: '',
+				});
+			} else {
+				this.setState({
+					symptomArray: this.state.symptomArray.concat(symptom),
+					symptomCopyArray: this.state.symptomCopyArray.concat(
+						this.state.value
+					),
+					value: '',
+				});
+			}
+		}
 	};
 
 	state = {
@@ -254,15 +541,15 @@ class Disease extends Component {
 	checkFirstAid = () => {
 		if (this.state.percentage1 >= 50) {
 			this.setState({
-				firstaidDisease: this.findAid(),
+				firstaidDisease: this.findAid(this.state.mydata),
 			});
 		} else if (this.state.percentage2 >= 50) {
 			this.setState({
-				firstaidDisease: '2',
+				firstaidDisease: this.findAid(this.state.second),
 			});
 		} else if (this.state.percentage3 >= 50) {
 			this.setState({
-				firstaidDisease: '3',
+				firstaidDisease: this.findAid(this.state.third),
 			});
 		} else {
 			this.setState({
@@ -276,7 +563,7 @@ class Disease extends Component {
 		var x = '';
 		if (disease == 'Fungal infection') {
 			x =
-				'creams can be applied to superficial skin infections. Don’t pick at the infected area because this could cause another type of infection.';
+				'Creams and lotions can be applied to superficial skin infections. Don’t pick at the infected area because this could cause another type of infection. Avoiding moisture can be helpful. The affected area should be kept clean and dry.';
 		} else if (disease == 'Allergy') {
 			x =
 				'Apply hydrocortisone cream or calamine lotion. Cover the area with a bandage. If theres swelling, apply a cold compress to the area. Take an antihistamine to reduce itching, swelling, and hives.';
@@ -397,15 +684,6 @@ class Disease extends Component {
 			<div>
 				<div className='container'>
 					<img className='dishead' src={banner} />
-					<div class='centered'>
-						<h1>FIRST AID</h1>
-					</div>
-					<div class='centeredd'>
-						<h4>When minutes matter, BE FAST.</h4>
-					</div>
-					<div class='centereddd'>
-						<h4>Know the disease & first aid of your symptoms.</h4>
-					</div>
 				</div>
 
 				<Container>
@@ -415,11 +693,11 @@ class Disease extends Component {
 								<Form.Row>
 									<Form.Group as={Col} controlId='formGridEmail'>
 										<Form.Label className='newtext'>
-											<b>Symptom 1:</b>
+											<b>Enter Your Symptoms here :</b>
 										</Form.Label>
 
 										<Row>
-											<Col sm={3}>
+											<Col sm={9}>
 												<Autosuggest
 													suggestions={suggestions}
 													onSuggestionsFetchRequested={
@@ -445,34 +723,21 @@ class Disease extends Component {
 													<i class='fas fa-plus'></i>
 												</Button>
 											</Col>
-
-											<Col>
-												<Button
-													variant='danger'
-													style={{ width: '12em' }}
-													onClick={async () => {
-														await this.submit();
-
-														this.setState({
-															symptomArray: [],
-															check: 'true',
-														});
-													}}
-												>
-													Check Disease
-												</Button>
-											</Col>
 										</Row>
 
 										<Row>
 											{this.state.symptomArray.map((i) => {
 												return (
-													<Col style={{ paddingTop: '1em' }}>
+													<Row
+														style={{ paddingTop: '1em', marginRight: '80px' }}
+													>
+														{/* <Row style={{ marginRight: '30px' }}> */}
 														<div
 															style={{
-																backgroundColor: '#639bc0',
+																backgroundColor: '#f4808d',
 																color: 'white',
 																width: '300px',
+																textAlign: 'center',
 															}}
 														>
 															<label style={{ padding: '5px' }}>
@@ -485,22 +750,39 @@ class Disease extends Component {
 																	if (index !== -1) {
 																		array.splice(index, 1);
 																		this.setState({ symptomArray: array });
-																		alert('deleted');
 																	}
 																}}
 																style={{
 																	float: 'right',
 																	height: '40px',
-																	backgroundColor: '#639bc0',
+																	backgroundColor: '#ed5262',
 																}}
 															>
 																<b>X</b>
 															</Button>
 														</div>
-													</Col>
+														{/* </Row> */}
+													</Row>
 												);
 											})}
 										</Row>
+										<Col>
+											<Button
+												variant='danger'
+												style={{ width: '12em', marginTop: '20px' }}
+												onClick={async () => {
+													await this.submit();
+
+													this.setState({
+														symptomArray: [],
+														check: 'true',
+														third: '',
+													});
+												}}
+											>
+												Check Disease
+											</Button>
+										</Col>
 									</Form.Group>
 								</Form.Row>
 
@@ -580,17 +862,21 @@ class Disease extends Component {
 												as={Col}
 												controlId='formGridEmail'
 											></Form.Group>
+											{this.state && this.state.firstaidDisease && (
+												<Form.Group>
+													<Form.Group as={Col} controlId='formGridEmail'>
+														<Form.Label className='newtext'>
+															<b>First Aid:</b>
+														</Form.Label>
+													</Form.Group>
 
-											<Form.Group as={Col} controlId='formGridEmail'>
-												<Form.Label className='newtext'>
-													<b>First Aid:</b>
-												</Form.Label>
-											</Form.Group>
-
-											<Form.Group as={Col} controlId='formGridPassword'>
-												<div>{this.state.firstaidDisease}</div>
-											</Form.Group>
-
+													<Form.Group as={Col} controlId='formGridPassword'>
+														<div class='disease'>
+															{this.state.firstaidDisease}
+														</div>
+													</Form.Group>
+												</Form.Group>
+											)}
 											<Form.Group
 												as={Col}
 												controlId='formGridEmail'

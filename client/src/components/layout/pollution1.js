@@ -165,7 +165,6 @@ var azadkashmirCities = [
 	{ name: 'Poonch ' },
 	{ name: 'Sudhanoti ' },
 ];
-var islCity = [{ name: 'Islamabad' }];
 const instructions = [
 	{
 		startpm: '0',
@@ -343,6 +342,81 @@ var punjabCities = [
 	{ name: 'Toba Tek Singh' },
 	{ name: 'Vehari' },
 ];
+var balochitsanCities = [
+	{ name: 'Awaran' },
+	{ name: 'Barkhan' },
+	{ name: 'Kachhi (Bolan)' },
+	{ name: 'Chagai' },
+	{ name: 'Dera Bugti' },
+	{ name: 'Gwadar' },
+	{ name: 'Harnai' },
+	{ name: 'Jafarabad' },
+	{ name: 'Jhal Magsi' },
+	{ name: 'Kalat' },
+	{ name: 'Kech (Turbat)' },
+	{ name: 'Kharan' },
+	{ name: 'Kohlu' },
+	{ name: 'Khuzdar' },
+	{ name: 'Killa Abdullah' },
+	{ name: 'Killa Saifullah' },
+	{ name: 'Lasbela' },
+	{ name: 'Loralai' },
+	{ name: 'Mastung' },
+	{ name: 'Musakhel' },
+	{ name: 'Nasirabad' },
+	{ name: 'Nushki' },
+	{ name: 'Panjgur' },
+	{ name: 'Pishin' },
+	{ name: 'Quetta' },
+	{ name: 'Sherani' },
+	{ name: 'Sibi' },
+	{ name: 'Washuk' },
+	{ name: 'Zhob' },
+	{ name: 'Ziarat' },
+];
+var fataCities = [
+	{ name: 'Bajaur Agency' },
+	{ name: 'Mohmand Agency' },
+	{ name: 'Khyber Agency' },
+	{ name: 'Frontier Region Peshawar' },
+	{ name: 'Frontier Region Kohat' },
+	{ name: 'Orakzai Agency' },
+	{ name: 'Kurram Agency' },
+	{ name: 'Frontier Region Bannu' },
+	{ name: 'North Waziristan Agency' },
+	{ name: 'Frontier Region Lakki Marwat' },
+	{ name: 'Frontier Region Tank' },
+	{ name: 'South Waziristan Agency' },
+	{ name: 'Frontier Region Dera Ismail Khan' },
+];
+var kpkCities = [
+	{ name: 'Abbottabad' },
+	{ name: 'Bannu' },
+	{ name: 'Battagram' },
+	{ name: 'Buner' },
+	{ name: 'Charsadda' },
+	{ name: 'Chitral' },
+	{ name: 'Dera Ismail Khan' },
+	{ name: 'Dir Upper' },
+	{ name: 'Dir Lower' },
+	{ name: 'Hangu' },
+	{ name: 'Haripur' },
+	{ name: 'Karak' },
+	{ name: 'Kohat' },
+	{ name: 'Kohistan' },
+	{ name: 'Lakki Marwat' },
+	{ name: 'Malakand' },
+	{ name: 'Mansehra' },
+	{ name: 'Mardan' },
+	{ name: 'Nowshera' },
+	{ name: 'Peshawar' },
+	{ name: 'Swabi' },
+	{ name: 'Swat' },
+	{ name: 'Shangla' },
+	{ name: 'Tank' },
+];
+var islCity = [{ name: 'Islamabad' }];
+
 const currentdate = new Date();
 const maxdate = currentdate.setDate(currentdate.getDate() + 13); //set new date 7 days from now(the correct 7 days)// Teach Autosuggest how to calculate suggestions for any given input value.
 
@@ -480,39 +554,15 @@ class Pollution1 extends Component {
 							allStringPre + ' Day = ' + day + ' ' + alldata.express[i] + '\n';
 						day = day + 1;
 					}
-					//pm 2.5 to be displayed on days cards
 					var index = 0;
-					// var dayval = alldata.express[0];
-					// //	console.log(alldata.express[1].length);
-					// var we = dayval.toString().substring('0', dayval.length - 1);
-					// var daysplit = we.split(',');
-					// var pm25_3Hour = [];
-					// daysplit.forEach(function(value) {
-					// 	pm25_3Hour.push(value.toString().substring('8', value.length - 2));
-					// });
-					// //time to be displayed on cards
-					// var tv = alldata.express[4];
-					// var nt = tv.toString().substring('1', tv.length - 1);
-					// var ts = nt.split(',');
-					// var time_3Hour = [0];
-					// ts.forEach(function(value) {
-					// 	var x = value.toString().substring('2', value.length - 1);
-					// 	if (x != '') {
-					// 		time_3Hour.push(x);
-					// 	}
-					// });
-
-					//creating object array for daily suggestion
 
 					var d = this.state.endingDay * 24;
-					//	console.log(pm251);
 					var type = '';
 					if (this.state.disease != 'Normal') {
 						type = 'Other';
 					} else {
 						type = 'Normal';
 					}
-					//console.log(this.state.disease);
 					var daycard = 0;
 
 					for (let j = 0; j < d; j++) {
@@ -592,6 +642,8 @@ class Pollution1 extends Component {
 					/>
 				);
 			} else if (this.state.province == 'Balochistan') {
+				languages = balochitsanCities;
+
 				return (
 					<Balochistan
 						cityname={this.state.value}
@@ -599,6 +651,8 @@ class Pollution1 extends Component {
 					/>
 				);
 			} else if (this.state.province == 'KPK') {
+				languages = kpkCities;
+
 				return (
 					<KPK cityname={this.state.value} valuepm25={this.state.mappm25} />
 				);
@@ -612,6 +666,7 @@ class Pollution1 extends Component {
 					/>
 				);
 			} else if (this.state.province == 'Tribal') {
+				languages = fataCities;
 				return (
 					<FATA cityname={this.state.value} valuepm25={this.state.mappm25} />
 				);
