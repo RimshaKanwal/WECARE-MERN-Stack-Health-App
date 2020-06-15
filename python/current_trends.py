@@ -4,6 +4,7 @@ import pickle
 import requests
 import os
 import sys
+import time
 key = '44792ca93a37456ba2680123201205'
 
 filename = os.path.join(os.getcwd(), 'python\Regressor_model.sav')
@@ -19,7 +20,17 @@ namepm25 = []
 def call(location, noDays, gap):
     url = 'http://api.worldweatheronline.com/premium/v1/weather.ashx?key='+key
     final_url = url+"&q="+location+"&format=json&num_of_days="+noDays+"&tp="+gap
-    results = requests.get(final_url)
+
+    results = ''
+    while results == '':
+        try:
+            results = requests.get(final_url)
+            break
+        except:
+            time.sleep(5)
+            continue
+    # results = requests.get(final_url)
+
     return results.text
 
 

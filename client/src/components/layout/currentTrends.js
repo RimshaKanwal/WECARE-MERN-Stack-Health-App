@@ -129,6 +129,7 @@ class CurrentTrends extends Component {
 			suggestions: [],
 			iscard: '',
 			isSpecific: '',
+			isbar: '',
 		};
 	}
 	onSuggestionsFetchRequested = ({ value }) => {
@@ -148,33 +149,37 @@ class CurrentTrends extends Component {
 		});
 	};
 	submit = async () => {
-		fetch('http://localhost:1000/api/CurrentTrends/city', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({
-				city: this.state.value,
-			}),
-		})
-			.then(async (data) => {
-				console.log(data);
-				var data = await this.callBackendAPI(
-					'http://localhost:1000/api/CurrentTrends/c'
-				);
-				console.log(data.express);
-				this.setState({
-					chartdata: data.express,
-				});
-				if (this.state.chartdata.length > 9) {
-					this.setState({
-						iscard: 'yes',
-						isSpecific: 'yes',
-					});
-				}
-				console.log(this.state.iscard);
+		if (this.state.value == '') {
+			alert('Please Enter a city');
+		} else {
+			fetch('http://localhost:1000/api/CurrentTrends/city', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					city: this.state.value,
+				}),
 			})
-			.catch((err) => alert(err));
+				.then(async (data) => {
+					console.log(data);
+					var data = await this.callBackendAPI(
+						'http://localhost:1000/api/CurrentTrends/c'
+					);
+					console.log(data.express);
+					this.setState({
+						chartdata: data.express,
+					});
+					if (this.state.chartdata.length > 9) {
+						this.setState({
+							iscard: 'yes',
+							isSpecific: 'yes',
+						});
+					}
+					console.log(this.state.iscard);
+				})
+				.catch((err) => alert(err));
+		}
 	};
 
 	callBackendAPI = async (url) => {
@@ -413,12 +418,12 @@ class CurrentTrends extends Component {
 						<div className={useStyles.root}>
 							<CircularProgress
 								style={{
-									width: '150px',
-									height: '150px',
+									width: '70px',
+									height: '70px',
 									alignItems: 'center',
 									justifyContent: 'center',
 									position: 'absolute',
-									left: '40%',
+									left: '45%',
 									bottom: '40%',
 									right: '40%',
 									top: '40%',
@@ -812,6 +817,9 @@ class CurrentTrends extends Component {
 													other city enter the city name and click check.
 												</b>
 											</p>
+											<p style={{ color: '#00acc1', padding: '0.5em' }}>
+												By Default it is showing the data for Islamabad
+											</p>
 											<br />
 											{/* ***********************************************************************************/}
 											<Autosuggest
@@ -834,6 +842,7 @@ class CurrentTrends extends Component {
 												color='#00acc1'
 												onClick={async () => {
 													await this.submit();
+													this.setState({ isbar: 'true' });
 												}}
 												style={{ align: 'center' }}
 											>
@@ -941,10 +950,30 @@ class CurrentTrends extends Component {
 											</div>
 										</GridItem>
 									)}
+									{this.state && !this.state.isSpecific && this.state.isbar && (
+										<GridItem xs={12} sm={12} md={6}>
+											<div className={useStyles.root}>
+												<CircularProgress
+													style={{
+														width: '70px',
+														height: '70px',
+														alignItems: 'center',
+														justifyContent: 'center',
+														position: 'absolute',
+														left: '70%',
+														bottom: '40%',
+														right: '40%',
+														top: '40%',
+														color: '#8d0000',
+													}}
+												/>
+											</div>
+										</GridItem>
+									)}
 									<GridItem xs={12} sm={12} md={6}>
 										{this.state && this.state.isSpecific && (
-											<div style={{ backgroundColor: '#00acc1' }}>
-												<p style={{ color: 'white', padding: '0.5em' }}>
+											<div style={{ backgroundColor: 'white' }}>
+												<p style={{ color: '#00acc1', padding: '0.5em' }}>
 													Fine particulate matter (PM2.5) is an air pollutant
 													that is a concern for people's health when levels in
 													air are high. PM stands for particle pollution: the

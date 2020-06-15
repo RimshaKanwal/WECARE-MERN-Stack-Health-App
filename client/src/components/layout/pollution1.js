@@ -28,6 +28,7 @@ import Balochistan from './Maps/balochistan';
 import KPK from './Maps/KPK.js';
 import Islamabad from './Maps/Islamabad.js';
 import FATA from './Maps/FATA.js';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import {
 	BarChart,
@@ -60,75 +61,7 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-var languages = [
-	{ name: 'Lahore' },
-	{ name: 'Karachi' },
-	{ name: 'Islamabad' },
-	{ name: 'Multan' },
-	{ name: 'Faislabad' },
-	{ name: 'Rawalpindi' },
-	{ name: 'Gujranwala' },
-	{ name: 'Hyderabad' },
-	{ name: 'Peshawar' },
-	{ name: 'Quetta' },
-	{ name: 'Sargodha' },
-	{ name: 'Sialkot' },
-	{ name: 'Bahawalpur' },
-	{ name: 'Sukkur' },
-	{ name: 'Kandhkot' },
-	{ name: 'Sheikhupura' },
-	{ name: 'Mardan' },
-	{ name: 'Gujrat' },
-	{ name: 'Larkana' },
-	{ name: 'Kasur' },
-	{ name: 'Rahim Yar Khan' },
-	{ name: 'Sahiwal' },
-	{ name: 'Okara' },
-	{ name: 'Wah' },
-	{ name: 'Dera Ghazi Khan' },
-	{ name: 'Mingora' },
-	{ name: 'Mirpur Khas' },
-	{ name: 'Chiniot' },
-	{ name: 'Nawabshah' },
-	{ name: 'Kamoke' },
-	{ name: 'Burewala' },
-	{ name: 'Jhelum' },
-	{ name: 'Sadiqabad' },
-	{ name: 'Khanewal' },
-	{ name: 'Hafizabad' },
-	{ name: 'Kohat' },
-	{ name: 'Jacobabad' },
-	{ name: 'Shikarpur' },
-	{ name: 'Muzaffargarh' },
-	{ name: 'Khanpur' },
-	{ name: 'Gojra' },
-	{ name: 'Bahawalnagar' },
-	{ name: 'Abottabad' },
-	{ name: 'Muridke' },
-	{ name: 'Pakpattan' },
-	{ name: 'Khuzdar' },
-	{ name: 'Jaranwala' },
-	{ name: 'Chishtian' },
-	{ name: 'Daska' },
-	{ name: 'Mandi Bahauddin' },
-	{ name: 'Kamalia' },
-	{ name: 'Tando Adam' },
-	{ name: 'Khairpur' },
-	{ name: 'Dera Ismail Khan' },
-	{ name: 'Vehari' },
-	{ name: 'Nowshera' },
-	{ name: 'Khushab' },
-	{ name: 'Charsada' },
-	{ name: 'Wazirabad' },
-	{ name: 'Chakwal' },
-	{ name: 'Mianwali' },
-	{ name: 'Tando Allahyar' },
-	{ name: 'Kot Adu' },
-	{ name: 'Farooka' },
-	{ name: 'Chichawatni' },
-	{ name: 'Vehari' },
-	{ name: 'Kotli' },
-];
+var languages = [];
 var sindhCities = [
 	{ name: 'Badin' },
 	{ name: 'Dadu' },
@@ -153,7 +86,6 @@ var sindhCities = [
 	{ name: 'Tharparkar' },
 	{ name: 'Thatta' },
 	{ name: 'Umerkot' },
-	{ name: 'Lahore' },
 ];
 var azadkashmirCities = [
 	{ name: 'Bagh' },
@@ -460,6 +392,7 @@ class Pollution1 extends Component {
 			hour2: '',
 			mappm25: '',
 			selectedhour: '0',
+			circlebar: '',
 		};
 	}
 
@@ -473,15 +406,12 @@ class Pollution1 extends Component {
 		});
 		graph = [];
 	};
-	// Autosuggest will call this function every time you need to update suggestions.
-	// You already implemented this logic above, so just use it.
 	onSuggestionsFetchRequested = ({ value }) => {
 		this.setState({
 			suggestions: getSuggestions(value),
 		});
 	};
 
-	// Autosuggest will call this function every time you need to clear suggestions.
 	onSuggestionsClearRequested = () => {
 		this.setState({
 			suggestions: [],
@@ -544,7 +474,7 @@ class Pollution1 extends Component {
 					});
 					//
 					finaltime.map((i, e) =>
-						graph.push({ pv: i, name: finalArrayPM25[e] })
+						graph.push({ pm: i, PM25: finalArrayPM25[e] })
 					);
 
 					var allStringPre = '';
@@ -615,7 +545,8 @@ class Pollution1 extends Component {
 		}
 		return result;
 	}
-	setMap() {
+
+	setMap = () => {
 		if (this.state.province == 'Pakistan') {
 			return <Pakistan />;
 		}
@@ -672,7 +603,7 @@ class Pollution1 extends Component {
 				);
 			}
 		}
-	}
+	};
 	startDateChange = async (date) => {
 		await this.setState({
 			startDate: date,
@@ -776,7 +707,6 @@ class Pollution1 extends Component {
 
 	render() {
 		const { value, suggestions } = this.state;
-		// Autosuggest will pass through all these props to the input.
 		const inputProps = {
 			placeholder: 'City Name',
 			value,
@@ -786,32 +716,32 @@ class Pollution1 extends Component {
 			{
 				value: 5,
 				color: '#15AB00',
-				legendLabel: 'Good',
+				legendLabel: 'Good ( 0 - 12 )',
 			},
 			{
 				value: 5,
 				color: '#FEC34D',
-				legendLabel: 'Moderate',
+				legendLabel: 'Moderate ( 12 - 35 )',
 			},
 			{
 				value: 5,
 				color: '#FF5C00',
-				legendLabel: 'Unhealthy For sensitive Groups',
+				legendLabel: 'Unhealthy For sensitive Groups ( 35 - 55 )',
 			},
 			{
 				value: 5,
 				color: '#FF2B00',
-				legendLabel: 'Unhealthy',
+				legendLabel: 'Unhealthy ( 55 - 150 )',
 			},
 			{
 				value: 5,
 				color: '#B44010',
-				legendLabel: 'Very Unhealthy',
+				legendLabel: 'Very Unhealthy ( 150 - 250 )',
 			},
 			{
 				value: 5,
 				color: '#800000',
-				legendLabel: 'Hazardous',
+				legendLabel: 'Hazardous	( 250 - 500 )',
 			},
 		];
 		return (
@@ -838,7 +768,10 @@ class Pollution1 extends Component {
 												value={this.state.province}
 												className={useStyles.selectEmpty}
 												onChange={(e) =>
-													this.setState({ province: e.target.value })
+													this.setState({
+														province: e.target.value,
+														circlebar: '',
+													})
 												}
 											>
 												<MenuItem value='AzadKashmir'>Azad Kashmir</MenuItem>
@@ -936,6 +869,7 @@ class Pollution1 extends Component {
 										color='primary'
 										onClick={async () => {
 											await this.submit();
+											this.setState({ circlebar: 'true' });
 										}}
 									>
 										Show Results
@@ -953,25 +887,71 @@ class Pollution1 extends Component {
 						<GridItem xs={12} sm={12} md={4}>
 							<ColorBar data={data} />
 						</GridItem>
-
 						{this.state && this.state.chart && (
 							<GridItem xs={12} sm={12} md={8}>
+								<div style={{ backgroundColor: 'white' }}>
+									<p style={{ color: 'black', padding: '0.5em' }}>
+										<b>
+											* Fine particulate matter (PM2.5) is an air pollutant that
+											is a concern for people's health when levels in air are
+											high. PM stands for particle pollution: the term for a
+											mixture of solid particles and liquid droplets found in
+											the air. Particulate matter contains microscopic solids or
+											liquid droplets that are so small that they can be inhaled
+											and cause serious health problems. The levels of PM 2.5
+											and how dangerous they are displayed in the table.
+										</b>{' '}
+										<br />
+										<b>
+											* This Graph Shows the Value of PM 2.5 with an interval of
+											3 hours in your selected dates. You can hover over the bar
+											graph and see the value of PM 2.5 and match it with the
+											table above that will help you know the Intensity Level.
+										</b>
+									</p>
+								</div>
+							</GridItem>
+						)}
+
+						{this.state && !this.state.chart && this.state.circlebar && (
+							<div className={useStyles.root}>
+								<CircularProgress
+									style={{
+										width: '70px',
+										height: '70px',
+										alignItems: 'center',
+										justifyContent: 'center',
+										position: 'absolute',
+										left: '60%',
+										// bottom: '10%',
+										right: '30%',
+										// top: '80%',
+										color: '#8d0000',
+									}}
+									// color='#8d0000'
+								/>
+							</div>
+						)}
+						{this.state && this.state.chart && (
+							<GridItem xs={12} sm={12} md={12}>
 								<Card chart>
 									<CardHeader color='danger'>
-										<BarChart width={650} height={350} data={this.state.chart}>
+										<BarChart width={1000} height={350} data={this.state.chart}>
 											<CartesianGrid strokeDasharray='3 3' />
-											<XAxis dataKey='pv' />
+											<XAxis dataKey='pm' />
 											<YAxis />
-											<Tooltip />
+											<Tooltip style={{ color: 'black' }} />
 											<Legend />
-											<Bar dataKey='name' fill='#D3D3D3' />
+											<Bar dataKey='PM25' fill='#D3D3D3' />
 										</BarChart>
 									</CardHeader>
 									<CardBody>
 										<h4 className={useStyles.cardTitle}>Pollution Graph</h4>
 										<p className={useStyles.cardCategory}>
-											Predict and Display Pm2.5 value with 1 hour interval{' '}
+											Displaying Pm2.5 value
 										</p>
+										<p>X-Axis : Time</p>
+										<p>Y-Axis : PM 2.5 Value</p>
 									</CardBody>
 								</Card>
 							</GridItem>

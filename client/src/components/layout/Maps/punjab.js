@@ -125,7 +125,7 @@ class Punjab extends React.Component {
 							includevalueinlabels: '1',
 							labelsepchar: ': ',
 							entityFillHoverColor: '#FFF9C4',
-							theme: 'fusion'
+							theme: 'fusion',
 						},
 						// Aesthetics; ranges synced with the slider
 						colorrange: {
@@ -136,44 +136,44 @@ class Punjab extends React.Component {
 								{
 									minvalue: '0',
 									maxvalue: '12',
-									color: '#15AB00'
+									color: '#15AB00',
 								},
 								{
 									minvalue: '13',
 									maxvalue: '35',
-									color: '#FEC34D'
+									color: '#FEC34D',
 								},
 								{
 									minvalue: '36',
 									maxvalue: '55',
-									color: '#FF5C00'
+									color: '#FF5C00',
 								},
 								{
 									minvalue: '55',
 									maxvalue: '150',
-									color: '#FF2B00'
+									color: '#FF2B00',
 								},
 								{
 									minvalue: '150',
 									maxvalue: '250',
-									color: '#B44010'
+									color: '#B44010',
 								},
 								{
 									minvalue: '250',
 									maxvalue: '500',
-									color: '#800000'
-								}
-							]
+									color: '#800000',
+								},
+							],
 						},
 						// Source data as JSON --> id represents countries of world.
 						data: [
 							{
 								id: '' + z,
 								value: '' + val,
-								showLabel: '1'
-							}
-						]
-					}
+								showLabel: '1',
+							},
+						],
+					},
 				}}
 			/>
 		);
