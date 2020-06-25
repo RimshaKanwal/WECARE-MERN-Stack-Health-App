@@ -44,6 +44,8 @@ router.get('/', function (req, res, next) {
 		mode: 'text',
 		pythonOptions: ['-u'],
 		scriptPath: 'E:/Mern-Projects/WECARE 2/WECARE/python',
+		// scriptPath: '../../python',
+
 		headers: { 'content-type': 'application/json' },
 
 		args: [c, ds, dd, ed, hh],

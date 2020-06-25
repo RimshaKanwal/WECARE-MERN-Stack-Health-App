@@ -29,7 +29,6 @@ router.get('/c', function (req, res, next) {
 
 router.get('/', function (req, res, next) {
 	console.log('this the callback api');
-
 	var options = {
 		mode: 'text',
 		pythonOptions: ['-u'],
@@ -41,21 +40,17 @@ router.get('/', function (req, res, next) {
 		res.send({ express: results });
 	});
 });
-
 router.get('/chart', function (req, res, next) {
 	console.log('this the callback api');
-
 	var options = {
 		mode: 'text',
 		pythonOptions: ['-u'],
 		scriptPath: 'E:/Mern-Projects/WECARE 2/WECARE/python',
 		headers: { 'content-type': 'application/json' },
 	};
-
 	PythonShell.run('charts_ct.py', options, function (err, results) {
 		if (err) throw err;
 		res.send({ express: results });
 	});
 });
-
 module.exports = router;
