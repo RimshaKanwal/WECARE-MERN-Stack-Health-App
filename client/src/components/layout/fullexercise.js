@@ -18,12 +18,13 @@ import coke from '../../img/slide8coke.jpg';
 import arms from '../../img/arms.jpg';
 import fullbody from '../../img/fullbody.jpg';
 import armss from '../../img/armss.jpg';
-import gif1 from '../../img/gif1.gif';
-import gif2 from '../../img/gif2.gif';
-import gif3 from '../../img/gif3.gif';
+import gif1 from '../../img/gif9.gif';
+import gif2 from '../../img/gif10.gif';
+import gif3 from '../../img/gif11.gif';
 
-import gif4 from '../../img/gif4.gif';
-
+import gif4 from '../../img/gif12.gif';
+import gif5 from '../../img/gif13.gif';
+import gif6 from '../../img/gif14.gif';
 import exe1 from '../../img/exe1.JPG';
 
 import exeban1 from '../../img/eban1.jpg';
@@ -33,7 +34,7 @@ import { Form, Col, Row, Container, Button, Dropdown, Jumbotron, Card, CardGroup
 import BeforeAfterSlider from 'react-before-after-slider'
 
 
-class Upperexercise extends Component {
+class Fullexercise extends Component {
 
     constructor(props) {
         super(props);
@@ -83,7 +84,7 @@ class Upperexercise extends Component {
 
                 </Carousel>
                 <br/>
-                <center><h2><i class="fas fa-volleyball-ball"></i> Upper Body Workouts <i class="fas fa-volleyball-ball"></i></h2></center>
+                <center><h2><i class="fas fa-volleyball-ball"></i> Full Body Workouts <i class="fas fa-volleyball-ball"></i></h2></center>
                 <hr/>
                 <Container>
                     <Row>
@@ -93,10 +94,10 @@ class Upperexercise extends Component {
                         <Col sm={4}>
 
                             <p className="dietcard">
-                                <Badge variant="success"> <h5>Flat Chest Presses</h5></Badge><br />
-                                <i class="fas fa-arrow-circle-right"></i> Lying flat on bench, hold the dumbbells directly above chest, arms extended.<br />
-                                <i class="fas fa-arrow-circle-right"></i> Lower dumbbells to chest in a controlled manner.<br />
-                                <i class="fas fa-arrow-circle-right"></i> Press dumbbells back to starting position.<br />
+                                <Badge variant="dark"> <h5>Seated Shoulder Presses</h5></Badge><br />
+                                <i class="fas fa-arrow-circle-right"></i> Sit upright on bench with dumbbells over head. Make sure back is flat.<br />
+                                <i class="fas fa-arrow-circle-right"></i> Lower dumbbells slowly to shoulders.<br />
+                                <i class="fas fa-arrow-circle-right"></i> When arms are at 90 degrees, press the dumbbells back up and repeat.<br />
 
                             
                             </p>
@@ -108,10 +109,11 @@ class Upperexercise extends Component {
                         <Col sm={4}>
 
                             <p className="dietcard">
-                                <Badge variant="success"> <h5>Incline Chest Presses</h5></Badge><br />
+                                <Badge variant="dark"> <h5>Lateral Raises</h5></Badge><br />
                                 <br />
-                                <i class="fas fa-arrow-circle-right"></i> Adjust bench to an incline of 30 to 45 degrees.<br />
-                                <i class="fas fa-arrow-circle-right"></i> Repeat as above.<br />
+                                <i class="fas fa-arrow-circle-right"></i> Stand upright, knees slightly bent, shoulder width apart, holding dumbbells at sides.<br />
+                                <i class="fas fa-arrow-circle-right"></i> Bend elbows slightly and raise the dumbbells out to sides.<br />
+                                <i class="fas fa-arrow-circle-right"></i> When arms are parallel to floor, slowly lower back and repeat.<br />
 
                             
                             </p>
@@ -123,10 +125,10 @@ class Upperexercise extends Component {
                         <Col sm={4}>
 
                             <p className="dietcard">
-                                <Badge variant="success"> <h5>Flat Chest Flies</h5></Badge><br />
-                                <i class="fas fa-arrow-circle-right"></i> Lying flat on bench, hold dumbbells directly above chest.<br />
-                                <i class="fas fa-arrow-circle-right"></i> Bend elbows slightly and maintain throughout the exercise.<br />
-                                <i class="fas fa-arrow-circle-right"></i> Open arms to sides. Elbows should remain ‘locked’ in a slightly flexed position.<br />
+                                <Badge variant="dark"> <h5>Reverse Flies</h5></Badge><br />
+                                <i class="fas fa-arrow-circle-right"></i> Sit on edge of bench, feet flat on the floor.<br />
+                                <i class="fas fa-arrow-circle-right"></i> Hold dumbbells next to feet and bend arms slightly.<br />
+                                <i class="fas fa-arrow-circle-right"></i> When arms are parallel to floor, slowly lower dumbbells back.<br />
 
                             
                             </p>
@@ -137,10 +139,40 @@ class Upperexercise extends Component {
                         <Col sm={4}>
 
                             <p className="dietcard">
-                                <Badge variant="success"> <h5>Incline Chest Flies</h5></Badge><br />
+                                <Badge variant="dark"> <h5>Front Raises</h5></Badge><br />
                                 <br/>
-                                <i class="fas fa-arrow-circle-right"></i> Adjust bench to an incline of 30 to 45 degrees.<br />
-                                <i class="fas fa-arrow-circle-right"></i> Repeat as above.<br />
+                                <i class="fas fa-arrow-circle-right"></i> Stand upright, knees slightly bent, shoulder width apart.<br />
+                                <i class="fas fa-arrow-circle-right"></i> Raise one dumbbell directly in front of you.<br />
+                                <i class="fas fa-arrow-circle-right"></i> When arm is parallel to ground lower dumbbell slowly back. Repeat with the other arm.<br />
+                               
+                            
+                            </p>
+                        </Col>
+                        <Col sm={2}>
+                            <img src={gif5} />
+                        </Col>
+                        <Col sm={4}>
+
+                            <p className="dietcard">
+                                <Badge variant="dark"> <h5>Dead Lifts</h5></Badge><br />
+                                <i class="fas fa-arrow-circle-right"></i> Stand upright, feet shoulder width apart, knees slightly bent.<br />
+                                <i class="fas fa-arrow-circle-right"></i> Bend lower back and knees to lower the weights down your legs.<br />
+                                <i class="fas fa-arrow-circle-right"></i> Stand upright using lower back and legs, maintaining flat back and keeping your head up.<br />
+
+                            
+                            </p>
+                        </Col>
+                        <Col sm={2}>
+                            <img src={gif6} />
+                        </Col>
+                        <Col sm={4}>
+
+                            <p className="dietcard">
+                                <Badge variant="dark"> <h5>Lying Bent Over Rows</h5></Badge><br />
+                                <br/>
+                                <i class="fas fa-arrow-circle-right"></i> Lie face down on a flat or slightly inclined bench. Hold two dumbbells and let arms hang down.<br />
+                                <i class="fas fa-arrow-circle-right"></i> Pull dumbbells up towards chest.<br />
+                                <i class="fas fa-arrow-circle-right"></i> Slowly lower dumbbells back down and repeat.<br />
                                
                             
                             </p>
@@ -150,7 +182,7 @@ class Upperexercise extends Component {
                     <br/>
                     <Row>
                         <Col sm={4}>
-                        <ReactPlayer url='https://www.youtube.com/watch?v=bU0A-UwHHpU' playing />
+                        <ReactPlayer url='https://www.youtube.com/watch?v=va6lh5nZ4R8' playing />
                         </Col>
                         <Col sm={8}>cdcdc</Col>
                     </Row>
@@ -162,4 +194,4 @@ class Upperexercise extends Component {
     }
 }
 
-export default Upperexercise;
+export default Fullexercise;

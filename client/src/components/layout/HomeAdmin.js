@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 //import Navbar from '../layout/Navbar';
-
 import mask from '../../img/poll.PNG';
 import Aid from '../../img/aid2.jpg';
 import food from '../../img/foody.png';
 import exercise from '../../img/exercise.png';
 import trend from '../../img/trend.png';
 //import trend from '../../img/trend.png';
-// import diet from '../../img/adminhome.JPG';
-// import mealplan from '../../img/mealplan.JPG';
+import diet from '../../img/adminhome.JPG';
+import mealplan from '../../img/mealplan.JPG';
 //import AddDiet from './components/layout/adddiet';
 import {
 	Button,
@@ -180,8 +179,6 @@ class Home extends Component {
 								))}
 							</tbody>
 						</Table>
-
-						{'>'}
 					</center>
 				</div>
 			</section>

@@ -24,6 +24,8 @@ app.use('/api/Disease', require('./routes/api/Disease'));
 app.use('/api/Exercise', require('./routes/api/Exercise'));
 app.use('/api/CurrentTrends', require('./routes/api/currenttrend'));
 app.use('/api/charts', require('./routes/api/charts_ct'));
+app.use('/api/Admin', require('./routes/api/Admin'));
+app.use('/api/AuthAdmin', require('./routes/api/AuthAdmin'));
 
 app.listen(1000, () => {
 	console.log('Server started on port 1000');
