@@ -12,6 +12,7 @@ import exercise from './components/layout/exercise';
 
 import upperexercise from './components/layout/upperexercise';
 import CurrentTrends from './components/layout/currentTrends';
+import HomeAdmin from './components/layout/HomeAdmin';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
@@ -34,6 +35,7 @@ class App extends Component {
 							<Route exact path='/exercise' component={exercise} />
 							<Route exact path='/upperexercise' component={upperexercise} />
 							<Route exact path='/currenttrends' component={CurrentTrends} />
+							<Route exact path='/HomeAdmin' component={HomeAdmin} />
 						</Switch>
 					</section>
 					<Footer />

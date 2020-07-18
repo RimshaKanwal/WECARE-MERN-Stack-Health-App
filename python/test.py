@@ -12,7 +12,7 @@ endingDay = sys.argv[4]
 hour = sys.argv[5]
 pm25 = []
 graph = []
-key = '44792ca93a37456ba2680123201205'
+key = 'c322c0a6a2854d39a1165623201307'
 cardhour = []
 time1 = []
 

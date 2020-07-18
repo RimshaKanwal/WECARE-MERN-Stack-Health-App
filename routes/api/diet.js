@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Diet = require('../../models/dietplan');
+
 // const config = require('config');
 // var multer = require('multer');
 
@@ -20,7 +21,7 @@ router.post('/', async (req, res) => {
 			breakfast: req.body.breakfast,
 			lunch: req.body.lunch,
 			snack: req.body.snack,
-			dinner: req.body.dinner
+			dinner: req.body.dinner,
 		});
 		diet.save();
 		res.json(diet);
@@ -31,6 +32,16 @@ router.post('/', async (req, res) => {
 		return;
 	}
 });
+
+router.get('/', async (req, res) => {
+	try {
+		const diet = await Diet.find();
+		res.json(diet);
+	} catch (error) {
+		console.log(error);
+	}
+});
+
 router.get('/', async (req, res) => {
 	try {
 		const diet = await Diet.find();
@@ -47,7 +58,7 @@ router.post('/get_calorie', async (req, res) => {
 	try {
 		const diet = await Diet.find();
 
-		diet.map(item => {
+		diet.map((item) => {
 			let closest_cal = Math.abs(item.calorie - req.body.calorie);
 			plan_array.push({
 				_id: item._id,
@@ -56,11 +67,11 @@ router.post('/get_calorie', async (req, res) => {
 				lunch: item.lunch,
 				snack: item.snack,
 				dinner: item.dinner,
-				closest_cal: closest_cal
+				closest_cal: closest_cal,
 			});
 		});
 
-		plan_array.sort(function(a, b) {
+		plan_array.sort(function (a, b) {
 			return a.closest_cal - b.closest_cal;
 		});
 
@@ -82,6 +93,50 @@ router.get('/calorie', async (req, res) => {
 		console.error(err.message);
 		res.status(500).send('Server Error');
 	}
+});
+////////skype
+router.post('/update_diet', async (req, res) => {
+	try {
+		diet = new Diet({
+			calorie: req.body.calorie,
+			breakfast: req.body.breakfast,
+			lunch: req.body.lunch,
+			snack: req.body.snack,
+			dinner: req.body.dinner,
+		});
+		Diet.findOneAndUpdate(
+			{ _id: req.body._id },
+			{
+				calorie: req.body.calorie,
+				breakfast: req.body.breakfast,
+				lunch: req.body.lunch,
+				snack: req.body.snack,
+				dinner: req.body.dinner,
+			},
+			function (error, results) {
+				if (error) {
+					return next(error);
+				}
+			}
+		);
+		res.json(diet);
+		console.log(diet);
+	} catch (err) {
+		console.error(err.message);
+		res.status(500).send('Server error');
+		return;
+	}
+});
+///Deleteee
+router.delete('/del_diet', function (req, res, next) {
+	did = req.body.id;
+	Diet.deleteOne({ _id: did }, function (error, results) {
+		if (error) {
+			return next(error);
+		}
+		// Respond with valid data
+		res.json(results);
+	});
 });
 
 module.exports = router;

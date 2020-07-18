@@ -5,7 +5,7 @@ import requests
 import os
 import sys
 import time
-key = '44792ca93a37456ba2680123201205'
+key = 'c322c0a6a2854d39a1165623201307'
 
 filename = os.path.join(os.getcwd(), 'python\Regressor_model.sav')
 load_lr_model = pickle.load(open(filename, 'rb'))

@@ -14,7 +14,7 @@ import {
 	Container,
 	Card,
 	Button,
-	Jumbotron
+	Jumbotron,
 } from 'react-bootstrap';
 
 class Home extends Component {
@@ -56,7 +56,7 @@ class Home extends Component {
 											style={{
 												width: '20rem',
 												height: '30em',
-												borderstyle: 'double'
+												borderstyle: 'double',
 											}}
 										>
 											<center>
@@ -155,7 +155,7 @@ class Home extends Component {
 									<Col>
 										<Card
 											border='info'
-											style={{ width: '20rem', height: '27em' }}
+											style={{ width: '30rem', height: '27em' }}
 										>
 											<center>
 												<Card.Img
@@ -186,7 +186,7 @@ class Home extends Component {
 									<Col>
 										<Card
 											border='info'
-											style={{ width: '20rem', height: '27em' }}
+											style={{ width: '30rem', height: '27em' }}
 										>
 											<center>
 												<Card.Img
@@ -197,14 +197,17 @@ class Home extends Component {
 												/>
 											</center>
 											<Card.Body>
-												<Card.Title>Current Trends</Card.Title>
+												<Card.Title>Current Trends and Analytics</Card.Title>
 												<Card.Text>
 													Check trends of cities with respect to their weather
 													conditions.
 												</Card.Text>
 												<center>
-													<Button variant='primary' style={{ width: '10rem' }}>
-														{' '}
+													<Button
+														variant='primary'
+														style={{ width: '10rem' }}
+														onClick={this.push5}
+													>
 														Try Now
 													</Button>
 												</center>
@@ -212,7 +215,7 @@ class Home extends Component {
 										</Card>
 									</Col>
 
-									<Col>
+									{/* <Col>
 										<Card
 											border='info'
 											style={{ width: '20rem', height: '27em' }}
@@ -232,13 +235,17 @@ class Home extends Component {
 													condition
 												</Card.Text>
 												<center>
-													<Button variant='primary' style={{ width: '10rem' }}>
+													<Button
+														variant='primary'
+														style={{ width: '10rem' }}
+														onClick={this.push5}
+													>
 														Try Now
 													</Button>
 												</center>
 											</Card.Body>
 										</Card>
-									</Col>
+									</Col> */}
 								</Row>
 							</Form>
 						</div>
