@@ -49,7 +49,7 @@ var languages = [
 	{ name: 'Karachi' },
 	{ name: 'Islamabad' },
 	{ name: 'Multan' },
-	{ name: 'Faislabad' },
+	{ name: 'Faisalabad' },
 	{ name: 'Rawalpindi' },
 	{ name: 'Gujranwala' },
 	{ name: 'Hyderabad' },
@@ -318,7 +318,7 @@ class CurrentTrends extends Component {
 					tension: 0,
 				}),
 				low: 0,
-				high: 65, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+				high: 100, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
 				plugins: [Chartist.plugins.tooltip()],
 				chartPadding: {
 					top: 0,

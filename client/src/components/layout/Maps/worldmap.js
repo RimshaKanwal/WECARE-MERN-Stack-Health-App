@@ -637,7 +637,7 @@ class World extends React.Component {
 										},
 										{
 											minvalue: '3000000',
-											maxvalue: '4000000',
+											maxvalue: '6000000',
 											color: '#b71c1c',
 										},
 									],

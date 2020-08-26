@@ -8,14 +8,6 @@ const Diet = require('../../models/dietplan');
 router.post('/', async (req, res) => {
 	const { calorie, breakfast, lunch, snack, dinner } = req.body;
 	try {
-		//see if user exists
-		// let exercise = await Exercise.findOne({ name });
-		// if (exercise) {
-		//   return res.status(400).json({
-		//     errors: [{ msg: 'exercise already exist' }]
-		//   });
-		// }
-
 		diet = new Diet({
 			calorie: req.body.calorie,
 			breakfast: req.body.breakfast,
@@ -137,6 +129,33 @@ router.delete('/del_diet', function (req, res, next) {
 		// Respond with valid data
 		res.json(results);
 	});
+});
+
+router.post('/get_id', async (req, res) => {
+	// id = req.body._id;
+	console.log(req.body);
+	res.json(req.body);
+});
+router.get('/a/:id', function (req, res, next) {
+	const query = req.params.id;
+	console.log(query);
+	Diet.find({
+		_id: query,
+	})
+		.populate('Diet')
+		.exec(function (error, results) {
+			if (error) {
+				return next(error);
+			}
+			// If valid user was not found, send 404
+			if (!results) {
+				res.status(404).send('No Record Found');
+			} else {
+				// Respond with valid data
+				res.json(results);
+				console.log(results);
+			}
+		});
 });
 
 module.exports = router;

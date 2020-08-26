@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 //import Navbar from '../layout/Navbar';
 import mask from '../../img/poll.PNG';
 import Aid from '../../img/aid2.jpg';
@@ -9,6 +9,8 @@ import trend from '../../img/trend.png';
 //import trend from '../../img/trend.png';
 import diet from '../../img/adminhome.JPG';
 import mealplan from '../../img/mealplan.JPG';
+import { Redirect } from 'react-router';
+
 //import AddDiet from './components/layout/adddiet';
 import {
 	Button,
@@ -25,16 +27,13 @@ import {
 	Sonnet,
 	Table,
 } from 'react-bootstrap';
-
+import Updatediet from './updatediet';
 class Home extends Component {
 	constructor(props) {
 		super(props);
 		this.push = this.push.bind(this);
 		this.state = {
-			plans: [
-				// { 'calorie': 2044, 'breakfast': 'homey2', 'lunch': 'honey3', 'snack': 'honey4', 'dinner': 'honey5' },
-				//{ 'calorie': 2022, 'breakfast': 'fnhefh', 'lunch': 'honey3', 'snack': 'honey4', 'dinner': 'honey5' },
-			],
+			plans: [],
 		};
 	}
 	push() {
@@ -50,9 +49,17 @@ class Home extends Component {
 		window.location.href = 'http://localhost:3000/exercise';
 	}
 	push5() {
-		let test = { id: 1, comment: 'Rimsha got bestand beasty GUY of uni' };
-		localStorage.setItem('Updateplan', 'rimsha is churiii');
-		window.location.href = 'http://localhost:3000/updatediet';
+		// let test = { id: 1, comment: 'test' };
+		// localStorage.setItem('Updateplan', 'updated');
+		// window.location.href = 'http://localhost:3000/updatediet';
+		return (
+			<Redirect
+				to={{
+					pathname: 'http://localhost:3000/updatediet',
+					state: { id: '123' },
+				}}
+			/>
+		);
 	}
 
 	fetch = async () => {
@@ -79,13 +86,22 @@ class Home extends Component {
 		});
 	};
 
+	// handleSubmit = () => {
+	// 	return(
+	// 	<Redirect
+	// 		to={{
+	// 			pathname: 'http://localhost:3000/updatediet',
+	// 			state: { id: '123' },
+	// 		}})
+	// 	/>;
+	// };
 	componentDidMount() {
 		//console.log("muizzzz", this.fetch);
 		this.fetch();
 	}
 
 	render() {
-		console.log('my plans', this.state.plans);
+		// console.log('my plans', this.state.plans);
 		return (
 			<section>
 				<div>
@@ -171,7 +187,19 @@ class Home extends Component {
 											>
 												Delete
 											</Button>
-											<Button variant='secondary' onClick={this.push5}>
+											<Button
+												variant='secondary'
+												onClick={() => {
+													var array = [...this.state.plans];
+													var index = array.indexOf(item);
+													if (index !== -1) {
+														const url =
+															'http://localhost:3000/updatediet?id=' +
+															array[index]._id;
+														window.open(url);
+													}
+												}}
+											>
 												Update
 											</Button>
 										</td>

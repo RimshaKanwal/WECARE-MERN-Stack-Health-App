@@ -99,31 +99,38 @@ class Exercise extends Component {
                   <Form.Control as='select'
                     onChange={e => this.setState({ disExercise: e.target.value })}
                   >
-                    <option value='eactive'>Heart Patient </option>
+                    <option value='heart'>Heart Disease </option>
                     <option value='diabetes'>Diabetes</option>
-                    <option value='light'>High/Low Blood Pressure</option>
-                    <option value='active'> Thyroid</option>
-                    <option value='vactive'>Asthma</option>
+                    <option value='highbp'>High Blood Pressure</option>
+                    <option value='thyroid'> Thyroid</option>
+                    <option value='asthma'>Asthma</option>
                     
-                    <option value='eactive'>Cancer </option>
-                    <option value='diabeteus'>Arthritis</option>
-                    <option value='light'>Demantia</option>
-                    <option value='active'> Thyroid</option>
-                    <option value='vactive'>Asthma</option>
+                    <option value='cancer'>Cancer </option>
+                   
+                   
+                    
+                  
 
                   </Form.Control>
                 </Form.Group>
                 <center><Button variant="primary" style={{ width: '20rem' }} onClick={async () => {
-                  var show=0;
-
-                  if (this.state.disExercise == 'adds') {
-                    show = 1;
-                  }
+                  var show = "(1) Choose an aerobic activity such as walking, swimming, light jogging, or biking. (2) Do this at least 3 to 4 times a week. (3) Always do 5 minutes of stretching or moving around to warm up your muscles and heart before exercising.";
+                                    
                   if (this.state.disExercise == 'diabetes') {
-                    show = "30 mins of regular pre-breakfast brisk walk can help insulin more effectively lower your sugar level.";
+                    show = "(1) Walking: Brisk walk for 30 min before breakfast can help insulin more effectively lower your sugar level. (2) Cycling : Go for Cycling atleast once a week. (3) Yoga : Light Yoga daily is good for your health.";
                   }
-                  else {
-                    show = 223451;
+                  if (this.state.disExercise == 'cancer') {
+                    show = "(1) Flexibility exercises (stretching). (2) Aerobic exercise, such as brisk walking, jogging, and swimming. (3) Resistance training (Iifting weights or isometric exercise), which builds muscle.";
+                  }
+                  if (this.state.disExercise == 'highbp') {
+                    show = "(1) Ten minutes of brisk or moderate walking three times a day. Exercise lowers blood pressure by reducing blood vessel stiffness so blood can flow more easily. (2) Desk treadmilling or pedal pushing and weight training.";
+                  }
+                  if (this.state.disExercise == 'thyroid') {
+                    show = "Do yoga poses i.e Supported shoulderstand: Shoulderstand is often the first pose that's suggested to treat the thyroid. Plow pose: In plow pose, your thyroid is believed to get the same stimulation as it does in shoulderstand.";
+                  }
+                  
+                  if (this.state.disExercise == 'asthma') {
+                    show = "(1)  Swimming is one of the best exercises for asthma because it builds up the muscles you use for breathing. (2) Yoga is another good exercise for asthma. (3) Walking and Biking.";
                   }
 
                   this.setState({
@@ -152,30 +159,34 @@ class Exercise extends Component {
                   <Form.Control as='select'
                     onChange={e => this.setState({ disExercise: e.target.value })}
                   >
-                    <option value='eactive'>Shoulder pain </option>
-                    <option value='diabetes'>Back pain</option>
-                    <option value='light'>Pain in legs</option>
-                    <option value='active'> Pain in arms</option>
-                    <option value='vactive'>Neck pain</option>
                     
-                    <option value='eactive'>Fibromyalgia </option>
-                    <option value='diabeteus'>Muscle pain</option>
+                    <option value='backpain'>Back pain</option>
+                    <option value='musclepain'>Muscle Pain</option>
+                    <option value='stomach'> Stomachache</option>   
+                    <option value='migraines'>Migraines</option> 
+                      
+                    <option value='arthritis'>Arthritis </option>
+                    
                     
 
                   </Form.Control>
                 </Form.Group>
                 <center><Button variant="primary" style={{ width: '20rem' }} onClick={async () => {
-                  var show=0;
+                  var show="(1) Stretching daily, ideally in the morning, is important for relieving Arthritis. (2) Flowing movements, such as tai chi and yoga. (3) Walking or cycling (4)  Pilates.";
 
-                  if (this.state.disExercise == 'adds') {
-                    show = 1;
+                  if (this.state.disExercise == 'backpain') {
+                    show = "(1) Plank: Plank for 30sec-1min. (2) Stretches : Do arm nd back streches. (3) Avoid leg exercises and lifting. (4) Wall Situps";
                   }
-                  if (this.state.disExercise == 'diabetes') {
-                    show = 'Plank for 30 seconds. Streches: Do arm and back streches. Do wall situps (15 recommended)';
+                  if (this.state.disExercise == 'musclepain') {
+                    show = "(1)  Use an icepack for sore muscles. (2) Stretches. (3) Light exercises which include swimming and walking.";
                   }
-                  else {
-                    show = 223451;
+                  if (this.state.disExercise == 'stomach') {
+                    show = "(1)  A small walk after a meal. (2) Massaging your abdominal area can help to relieve sensations of tightness, cramping and bloating. (3) Regualar exercise. (4) Yoga";
                   }
+                  if (this.state.disExercise == 'migraines') {
+                    show = "(1) adults should do 150 minutes of moderate-intensity aerobic exercise (eg, walking). (2) 2 or more days a week of muscle-strengthening exercises (eg, light weight lifting) each week. ";
+                  }
+                  
 
                   this.setState({
                     showcase2: show,
